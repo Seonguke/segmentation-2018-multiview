@@ -4,6 +4,12 @@ if nargin == 2
     num_regions = 10;
 end
 
+addpath('aux');
+addpath('aux/mex');
+addpath(fullfile('../external/vlfeat-0.9.20','toolbox','sift')) ;
+addpath(fullfile('../external/vlfeat-0.9.20','toolbox','mex','mexa64')) ;
+addpath('../external/cplex/matlab/')
+
 sequence_path = 'data/images/';
 ucm_dir = 'data/ucms/';
 
