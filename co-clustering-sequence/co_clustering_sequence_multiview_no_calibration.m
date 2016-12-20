@@ -31,11 +31,13 @@ path_ima = sprintf('%s/%s/%03d_partition.mat', out_path, sequence_name, num_regi
 if ~exist(path_ima)
     
     %% Create output folders
-    create_folder=sprintf('mkdir %s/%s', out_path, sequence_name);
-    system(create_folder);
+%     create_folder=sprintf('mkdir %s/%s', out_path, sequence_name);
+%     system(create_folder);
+% 
+%     give_acces=sprintf('chmod 777 %s/%s', out_path, sequence_name);
+%     system(give_acces);
 
-    give_acces=sprintf('chmod 777 %s/%s', out_path, sequence_name);
-    system(give_acces);
+    mkdir([out_path '/' sequence_name]);
 
     frames = dir(strcat(fullfile(sequence_path,sequence_name),'/undistorted*.jpg'));
     ucm_video_path = fullfile(ucm_dir,sequence_name,'mat');
