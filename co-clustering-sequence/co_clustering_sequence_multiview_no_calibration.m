@@ -4,16 +4,9 @@ if nargin == 2
     num_regions = 10;
 end
 
-sequence_path = '/imatge/cventura/MultiviewCosegDatasets_downsampled3/clips';
-if strcmp(sequence_name,'GardenChair')
-    sequence_path = '/imatge/cventura/MultiviewCosegDatasets_downsampled4/clips';
-end
+sequence_path = 'data/images/';
+ucm_dir = 'data/ucms/';
 
-ucm_dir = '/imatge/cventura/MultiviewCosegDatasets_downsampled3/ucms/';
-if strcmp(sequence_name,'GardenChair')
-    ucm_dir = '/imatge/cventura/MultiviewCosegDatasets_downsampled4/ucms/';
-end
-%lambda_end = 100;
 
 window = 20;
 w_color = 15;
