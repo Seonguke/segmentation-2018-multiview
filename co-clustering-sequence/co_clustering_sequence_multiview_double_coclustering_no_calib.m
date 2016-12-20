@@ -4,16 +4,14 @@ if nargin == 2
     num_regions = 10;
 end
 
-sequence_path = '/imatge/cventura/MultiviewCosegDatasets_downsampled3/clips';
-if strcmp(sequence_name,'GardenChair')
-    sequence_path = '/imatge/cventura/MultiviewCosegDatasets_downsampled4/clips';
-end
+addpath('aux');
+addpath('aux/mex');
+addpath(fullfile('../external/vlfeat-0.9.20','toolbox','sift')) ;
+addpath(fullfile('../external/vlfeat-0.9.20','toolbox','mex','mexa64')) ;
+addpath('../external/cplex/')
 
-ucm_dir = '/imatge/cventura/MultiviewCosegDatasets_downsampled3/ucms/';
-if strcmp(sequence_name,'GardenChair')
-    ucm_dir = '/imatge/cventura/MultiviewCosegDatasets_downsampled4/ucms/';
-end
-%lambda_end = 100;
+sequence_path = 'data/images/';
+ucm_dir = 'data/ucms/';
 
 window = 20;
 w_color = 15;
@@ -32,12 +30,7 @@ set(0,'RecursionLimit',1500);
 path_ima = sprintf('%s/%s/%03d_partition.mat', out_path, sequence_name, num_regions);
 if ~exist(path_ima)
     
-    %% Create output folders
-    create_folder=sprintf('mkdir %s/%s', out_path, sequence_name);
-    system(create_folder);
-
-    give_acces=sprintf('chmod 777 %s/%s', out_path, sequence_name);
-    system(give_acces);
+    mkdir([out_path '/' sequence_name]);
 
     frames = dir(strcat(fullfile(sequence_path,sequence_name),'/undistorted*.jpg'));
     ucm_video_path = fullfile(ucm_dir,sequence_name,'mat');

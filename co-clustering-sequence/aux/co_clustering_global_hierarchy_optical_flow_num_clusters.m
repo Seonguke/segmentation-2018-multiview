@@ -253,7 +253,6 @@ end
 %% Optimization process 
 % fprintf(' Optimization process...  \n')
 %tic;
-addpath('/usr/local/opt/CPLEX_Studio124/cplex/matlab/')
 x = cplexbilp(f',A,b',Aeq,beq');
 %toc;
 % fprintf(' ...ended! \n')

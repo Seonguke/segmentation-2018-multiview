@@ -577,7 +577,6 @@ beq = [beq num_clusters-2];
 
 
 tic;
-addpath('/usr/local/opt/CPLEX_Studio124/cplex/matlab/')
 x = cplexbilp(Q_vector_total',A,b',Aeq,beq');
 toc;
 
