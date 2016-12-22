@@ -58,7 +58,8 @@ fprintf(' ...ended! \n')
 RAG_i = RAG_Intra_mex(idx_neighbors_i,double(seg_i));
 RAG_j = RAG_Intra_mex(idx_neighbors_j,double(seg_j));
 
-load(['/work/cventura/segmentation_propagation/optical_flow/' sequence_name '/frame_OF_' sprintf('%05d',idx_j) '.mat']);
+pwd
+load(['data/optical_flow/' sequence_name '/previous_frame/frame_OF_' sprintf('%05d',idx_j) '.mat']);
 MV_x = flow(:,:,1);
 MV_y = flow(:,:,2);
 RAG_ij = RAG_Inter_motion_estimation_optical_flow_mex(double(seg_i), double(seg_j), MV_x, MV_y);

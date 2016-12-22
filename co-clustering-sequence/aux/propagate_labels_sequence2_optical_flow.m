@@ -358,11 +358,9 @@ for ff=1:N_frames-1
         
 
         if jj==ii+2
-            ['/work/cventura/segmentation_propagation/optical_flow_2previousframes/' sequence_name '/frame_OF_' sprintf('%05d',idx_new) '.mat']
-            load(['/work/cventura/segmentation_propagation/optical_flow_2previousframes/' sequence_name '/frame_OF_' sprintf('%05d',idx_new) '.mat']);
+            load(['data/optical_flow/' sequence_name '/2previous_frames/frame_OF_' sprintf('%05d',idx_new) '.mat']);
         else
-            ['/work/cventura/segmentation_propagation/optical_flow/' sequence_name '/frame_OF_' sprintf('%05d',idx_new+jj-3) '.mat']
-            load(['/work/cventura/segmentation_propagation/optical_flow/' sequence_name '/frame_OF_' sprintf('%05d',idx_new+jj-3) '.mat']);
+            load(['data/optical_flow/' sequence_name '/previous_frame/frame_OF_' sprintf('%05d',idx_new+jj-3) '.mat']);
         end
         
         

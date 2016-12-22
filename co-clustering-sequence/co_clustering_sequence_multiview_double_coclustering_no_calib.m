@@ -32,7 +32,7 @@ if ~exist(path_ima)
     
     mkdir([out_path '/' sequence_name]);
 
-    frames = dir(strcat(fullfile(sequence_path,sequence_name),'/undistorted*.jpg'));
+    frames = dir(strcat(fullfile(sequence_path,sequence_name),'/*.jpg'));
     ucm_video_path = fullfile(ucm_dir,sequence_name,'mat');
     ucm_vectors_video_path = fullfile(ucm_dir,sequence_name,'vectors');
 
